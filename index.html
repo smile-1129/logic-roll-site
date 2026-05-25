@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="LOGIC ROLL — かわいいファンタジーの世界で、ダイスとドローの不確定な運（ROLL）を、オートバトルと完璧な采配（LOGIC）でねじ伏せる、脳汁ローグライト・タワーディフェンス。">
+  <title>LOGIC ROLL | Official Teaser</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Noto+Sans+JP:wght@400;700;900&family=Ubuntu:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-bg" aria-hidden="true"></div>
+
+  <!-- タイトル画面：メインビジュアルカルーセル -->
+  <section class="title-screen" aria-label="メインビジュアル">
+    <div class="carousel" id="hero-carousel">
+      <div class="carousel__track">
+        <div class="carousel__slide is-active" data-slide="0">
+          <div class="carousel__visual carousel__visual--sky" role="img" aria-label="青空と浮遊島のファンタジー世界"></div>
+          <div class="carousel__overlay">
+            <p class="carousel__catch">不確定な運を、完璧な采配でねじ伏せろ。</p>
+            <h1 class="carousel__logo">
+              <span class="carousel__logo-main">LOGIC</span>
+              <span class="carousel__logo-accent">ROLL</span>
+            </h1>
+            <p class="carousel__sub">最高に脳汁が出るローグライト・タワーディフェンス</p>
+          </div>
+        </div>
+        <div class="carousel__slide" data-slide="1">
+          <div class="carousel__visual carousel__visual--forest" role="img" aria-label="光が差し込むファンタジーの森"></div>
+          <div class="carousel__overlay carousel__overlay--terms">
+            <div class="term-pair">
+              <p class="term-pair__item">
+                <span class="term-pair__label term-pair__label--roll">ROLL</span>
+                <span class="term-pair__mean">＝ 運</span>
+                <span class="term-pair__desc">ダイス、ドロー、湧き——揺らぐ不確定</span>
+              </p>
+              <p class="term-pair__item">
+                <span class="term-pair__label term-pair__label--logic">LOGIC</span>
+                <span class="term-pair__mean">＝ オートバトル</span>
+                <span class="term-pair__desc">采配した仲間が、自動で動く論理</span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel__slide" data-slide="2">
+          <div class="carousel__visual carousel__visual--ruins" role="img" aria-label="遺跡とちびキャラの冒険"></div>
+          <div class="carousel__overlay">
+            <p class="carousel__catch">かわいい世界で、ガチの戦略を。</p>
+            <div class="event-badge" role="status">
+              <span class="event-badge__spark" aria-hidden="true">✦</span>
+              <span class="event-badge__label">NEXT EVENT</span>
+              <span class="event-badge__date">2026.06 TOKYO COMITIA</span>
+              <span class="event-badge__detail">アルファ版 初お披露目</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button type="button" class="carousel__arrow carousel__arrow--prev" aria-label="前のスライド">
+        <span aria-hidden="true">‹</span>
+      </button>
+      <button type="button" class="carousel__arrow carousel__arrow--next" aria-label="次のスライド">
+        <span aria-hidden="true">›</span>
+      </button>
+
+      <div class="carousel__dots" role="tablist" aria-label="スライド選択">
+        <button type="button" class="carousel__dot is-active" data-goto="0" role="tab" aria-selected="true" aria-label="スライド1"></button>
+        <button type="button" class="carousel__dot" data-goto="1" role="tab" aria-selected="false" aria-label="スライド2"></button>
+        <button type="button" class="carousel__dot" data-goto="2" role="tab" aria-selected="false" aria-label="スライド3"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- グローバルナビ -->
+  <header class="global-nav">
+    <div class="global-nav__inner">
+      <a href="#top" class="global-nav__logo" aria-label="LOGIC ROLL トップへ">
+        <span class="global-nav__logo-main">LOGIC</span>
+        <span class="global-nav__logo-accent">ROLL</span>
+      </a>
+      <nav class="global-nav__menu" aria-label="メインメニュー">
+        <a href="#top" class="nav-item is-active" data-section="top">
+          <span class="nav-item__en">TOP</span>
+          <span class="nav-item__ja">トップ</span>
+        </a>
+        <a href="#system" class="nav-item" data-section="system">
+          <span class="nav-item__en">SYSTEM</span>
+          <span class="nav-item__ja">システム</span>
+        </a>
+        <a href="#contact" class="nav-item" data-section="contact">
+          <span class="nav-item__en">CONTACT</span>
+          <span class="nav-item__ja">コンタクト</span>
+        </a>
+      </nav>
+      <button type="button" class="global-nav__toggle" aria-expanded="false" aria-controls="nav-menu-mobile" aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav id="nav-menu-mobile" class="global-nav__mobile" aria-label="モバイルメニュー" hidden></nav>
+  </header>
+
+  <main class="main-content">
+    <!-- TOP：YouTube & X -->
+    <section class="page-section page-section--top" id="top" data-panel="top">
+      <div class="section-inner">
+        <header class="section-header section-header--left">
+          <span class="section-header__eyebrow">TOP</span>
+          <h2 class="section-header__title">最新情報</h2>
+          <p class="section-header__lead pitch-lead">
+            かわいいファンタジーの世界だけど、ダイスやドローのような
+            <strong>不確定な運（ROLL）</strong>を、自分の完璧な采配と
+            <strong>論理（LOGIC）</strong>でねじ伏せて突破する——
+            最高に脳汁が出るローグライト・タワーディフェンス。
+          </p>
+        </header>
+
+        <div class="top-grid">
+          <div class="media-block media-block--youtube">
+            <div class="media-block__head">
+              <span class="media-block__icon" aria-hidden="true">▶</span>
+              <h3 class="media-block__title">MOVIE</h3>
+              <p class="media-block__sub">オートバトルと、運をねじ伏せる瞬間</p>
+            </div>
+            <div class="media-block__body">
+              <div class="youtube-wrap">
+                <iframe
+                  src="https://www.youtube.com/embed/VIDEO_ID?rel=0"
+                  title="LOGIC ROLL 公式動画"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                  loading="lazy"
+                ></iframe>
+              </div>
+              <p class="media-block__note">※ 動画IDは <code>index.html</code> 内の YouTube URL を差し替えてください。</p>
+            </div>
+          </div>
+
+          <div class="media-block media-block--twitter">
+            <div class="media-block__head">
+              <span class="media-block__icon media-block__icon--x" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              </span>
+              <h3 class="media-block__title">X（Twitter）</h3>
+              <p class="media-block__sub">開発ログ・プレイのヒント</p>
+            </div>
+            <div class="media-block__body">
+              <div class="twitter-wrap">
+                <a
+                  class="twitter-timeline"
+                  data-theme="light"
+                  data-chrome="nofooter noheader transparent"
+                  data-height="420"
+                  href="https://twitter.com/"
+                >公式Xの投稿を読み込み中…</a>
+              </div>
+              <a
+                href="https://x.com/"
+                class="twitter-fallback-btn"
+                target="_blank"
+                rel="noopener noreferrer"
+              >公式Xをフォローする</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SYSTEM：采配 → オート → ねじ伏せ -->
+    <section class="page-section" id="system" data-panel="system">
+      <div class="section-inner">
+        <header class="section-header">
+          <span class="section-header__eyebrow">SYSTEM</span>
+          <h2 class="section-header__title">ROLL を LOGIC でねじ伏せる、3ステップ</h2>
+          <p class="section-header__lead">
+            運任せの局面を、采配とオートバトルで設計し直す——
+            そこに LOGIC ROLL ならではの「脳汁」があります。
+          </p>
+        </header>
+
+        <div class="system-summary system-summary--top">
+          <p class="system-summary__roll">
+            <span class="system-summary__label">ROLL</span>
+            ダイス・ドロー・湧き——毎ラウンドちがう「運」の素材
+          </p>
+          <span class="system-summary__arrow" aria-hidden="true">→</span>
+          <p class="system-summary__logic">
+            <span class="system-summary__label">LOGIC</span>
+            采配 × オートバトルで、運をねじ伏せて突破
+          </p>
+        </div>
+
+        <ol class="system-flow">
+          <li class="system-step system-step--reverse">
+            <div class="system-step__visual">
+              <img
+                src="images/system-01-roles.png"
+                alt="タンク・魔術師・サポートの3人。戦闘前の編成と采配をイメージしたイラスト"
+                width="640"
+                height="480"
+                loading="lazy"
+              >
+            </div>
+            <div class="system-step__body">
+              <span class="system-step__num">01</span>
+              <span class="system-step__tag system-step__tag--logic">LOGIC — 采配</span>
+              <h3 class="system-step__title">戦闘前に、完璧な「論理」を組み立てる</h3>
+              <p class="system-step__text">
+                タンク・魔術師・サポート——役割ごとに個性がある仲間を編成し、
+                <strong>誰をどこに置くか</strong>でオートバトルの結果を決める。
+                ここが LOGIC の入口。操作はこれから始まらない。最初の一手は、采配。
+              </p>
+              <p class="system-step__text system-step__text--sub">
+                ROLL で届いたカードや編成の候補を、どう論理に落とし込むか——試行錯誤の余地が、脳汁の源。
+              </p>
+            </div>
+          </li>
+
+          <li class="system-step">
+            <div class="system-step__visual">
+              <img
+                src="images/system-02-taunt.png"
+                alt="挑発スキルで敵をまとめる。オートバトルでキャラが自動行動するイメージのイラスト"
+                width="640"
+                height="480"
+                loading="lazy"
+              >
+            </div>
+            <div class="system-step__body">
+              <span class="system-step__num">02</span>
+              <span class="system-step__tag system-step__tag--logic">LOGIC — オートバトル</span>
+              <h3 class="system-step__title">采配した仲間が、自動で動く</h3>
+              <p class="system-step__text">
+                戦闘が始まれば、キャラは自分で挑発し、誘導し、位置を取る——
+                <strong>LOGIC ＝ オートバトル</strong>。
+                あなたは微操に追われず、「論理は正しかったか」を見届ける。
+              </p>
+              <p class="system-step__text system-step__text--sub">
+                バラバラに湧く ROLL の敵群も、オートの連携で一か所にまとまる。采配の質が、そのまま戦場の形になる。
+              </p>
+            </div>
+          </li>
+
+          <li class="system-step system-step--reverse">
+            <div class="system-step__visual">
+              <img
+                src="images/system-03-wipeout.png"
+                alt="範囲魔法でまとめた敵を一網打尽。運をねじ伏せた決着のイラスト"
+                width="640"
+                height="480"
+                loading="lazy"
+              >
+            </div>
+            <div class="system-step__body">
+              <span class="system-step__num">03</span>
+              <span class="system-step__tag system-step__tag--finish">ROLL × LOGIC — ねじ伏せ</span>
+              <h3 class="system-step__title">運を、一網打尽の快感でねじ伏せる</h3>
+              <p class="system-step__text">
+                まとまった敵群に、範囲魔法が炸裂——
+                <strong>不確定だった ROLL が、LOGIC によって「想定どおり」に決着</strong>した瞬間、
+                最高の脳汁が走る。
+              </p>
+              <p class="system-step__text system-step__text--sub">
+                「運が悪かった」を「采配が勝った」にひっくり返す。だから何度でも、もう一回。
+              </p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="page-section page-section--contact" id="contact" data-panel="contact">
+      <div class="section-inner">
+        <header class="section-header">
+          <span class="section-header__eyebrow">CONTACT</span>
+          <h2 class="section-header__title">お問い合わせ</h2>
+          <p class="section-header__lead">
+            取材・コラボ・フィードバックなど、お気軽にどうぞ。
+            送信後、自動返信メールをお送りします。
+          </p>
+        </header>
+
+        <form class="contact-form" id="contact-form" novalidate>
+          <div class="form-row">
+            <label class="form-label" for="contact-name">お名前 <span class="form-required">必須</span></label>
+            <input
+              class="form-input"
+              type="text"
+              id="contact-name"
+              name="name"
+              required
+              maxlength="80"
+              placeholder="例：山田 太郎"
+              autocomplete="name"
+            >
+          </div>
+
+          <div class="form-row">
+            <label class="form-label" for="contact-email">メールアドレス <span class="form-required">必須</span></label>
+            <input
+              class="form-input"
+              type="email"
+              id="contact-email"
+              name="email"
+              required
+              maxlength="254"
+              placeholder="例：example@email.com"
+              autocomplete="email"
+            >
+          </div>
+
+          <div class="form-row">
+            <label class="form-label" for="contact-subject">件名 <span class="form-required">必須</span></label>
+            <input
+              class="form-input"
+              type="text"
+              id="contact-subject"
+              name="subject"
+              required
+              maxlength="120"
+            >
+          </div>
+
+          <div class="form-row">
+            <label class="form-label" for="contact-message">お問い合わせ内容 <span class="form-required">必須</span></label>
+            <textarea
+              class="form-input form-textarea"
+              id="contact-message"
+              name="message"
+              required
+              maxlength="3000"
+              rows="7"
+              placeholder="お問い合わせ内容をご記入ください"
+            ></textarea>
+          </div>
+
+          <p class="contact-form__status" id="contact-status" role="status" aria-live="polite"></p>
+
+          <button type="submit" class="contact-form__submit" id="contact-submit">
+            <span class="contact-form__submit-text">送信する</span>
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-copy">&copy; 2026 LOGIC ROLL Project</p>
+      <a
+        href="https://x.com/"
+        class="footer-x-btn"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="公式X（Twitter）をフォロー"
+      >
+        <svg class="footer-x-btn__icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+          <path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+        </svg>
+        <span>Follow on X</span>
+      </a>
+    </div>
+  </footer>
+
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <script src="js/contact.js"></script>
+  <script>
+    (function () {
+      const carousel = document.getElementById("hero-carousel");
+      if (!carousel) return;
+
+      const slides = carousel.querySelectorAll(".carousel__slide");
+      const dots = carousel.querySelectorAll(".carousel__dot");
+      const prevBtn = carousel.querySelector(".carousel__arrow--prev");
+      const nextBtn = carousel.querySelector(".carousel__arrow--next");
+      let current = 0;
+      let timer;
+
+      function goTo(index) {
+        current = (index + slides.length) % slides.length;
+        slides.forEach((s, i) => s.classList.toggle("is-active", i === current));
+        dots.forEach((d, i) => {
+          d.classList.toggle("is-active", i === current);
+          d.setAttribute("aria-selected", i === current ? "true" : "false");
+        });
+      }
+
+      function next() { goTo(current + 1); }
+      function prev() { goTo(current - 1); }
+
+      function startAutoplay() {
+        clearInterval(timer);
+        timer = setInterval(next, 5500);
+      }
+
+      prevBtn.addEventListener("click", () => { prev(); startAutoplay(); });
+      nextBtn.addEventListener("click", () => { next(); startAutoplay(); });
+      dots.forEach((dot) => {
+        dot.addEventListener("click", () => {
+          goTo(Number(dot.dataset.goto));
+          startAutoplay();
+        });
+      });
+
+      carousel.addEventListener("mouseenter", () => clearInterval(timer));
+      carousel.addEventListener("mouseleave", startAutoplay);
+      startAutoplay();
+
+      const navItems = document.querySelectorAll(".nav-item");
+      const sections = document.querySelectorAll(".page-section");
+      const navToggle = document.querySelector(".global-nav__toggle");
+      const mobileNav = document.getElementById("nav-menu-mobile");
+      const desktopMenu = document.querySelector(".global-nav__menu");
+
+      function setActiveNav(id) {
+        navItems.forEach((item) => {
+          item.classList.toggle("is-active", item.dataset.section === id);
+        });
+      }
+
+      function scrollToSection(id) {
+        const target = document.getElementById(id);
+        if (target) {
+          const navHeight = document.querySelector(".global-nav")?.offsetHeight ?? 0;
+          const top = target.getBoundingClientRect().top + window.scrollY - navHeight - 8;
+          window.scrollTo({ top, behavior: "smooth" });
+        }
+        setActiveNav(id);
+      }
+
+      navItems.forEach((item) => {
+        item.addEventListener("click", (e) => {
+          e.preventDefault();
+          scrollToSection(item.dataset.section);
+          if (mobileNav && !mobileNav.hidden) {
+            mobileNav.hidden = true;
+            navToggle.setAttribute("aria-expanded", "false");
+          }
+        });
+      });
+
+      if (desktopMenu && mobileNav) {
+        mobileNav.innerHTML = desktopMenu.innerHTML;
+        mobileNav.querySelectorAll(".nav-item").forEach((item) => {
+          item.addEventListener("click", (e) => {
+            e.preventDefault();
+            scrollToSection(item.dataset.section);
+            mobileNav.hidden = true;
+            navToggle.setAttribute("aria-expanded", "false");
+          });
+        });
+      }
+
+      if (navToggle && mobileNav) {
+        navToggle.addEventListener("click", () => {
+          const open = mobileNav.hidden;
+          mobileNav.hidden = !open;
+          navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+          navToggle.setAttribute("aria-label", open ? "メニューを閉じる" : "メニューを開く");
+        });
+      }
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) setActiveNav(entry.target.dataset.panel);
+          });
+        },
+        { rootMargin: "-40% 0px -50% 0px", threshold: 0 }
+      );
+      sections.forEach((sec) => observer.observe(sec));
+    })();
+  </script>
+</body>
+</html>
