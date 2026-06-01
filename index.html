@@ -310,7 +310,17 @@
           </p>
         </header>
 
-        <form class="contact-form" id="contact-form" novalidate>
+        <form
+          class="contact-form"
+          id="contact-form"
+          action="https://formsubmit.co/dojinworks.2525@gmail.com"
+          method="POST"
+          novalidate
+        >
+          <input type="hidden" name="_subject" value="[LOGIC ROLL] お問い合わせ">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" value="https://logic-roll.com/?sent=1#contact">
           <div class="form-row">
             <label class="form-label" for="contact-name">お名前 <span class="form-required">必須</span></label>
             <input
@@ -394,7 +404,7 @@
   </footer>
 
   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-  <script src="js/contact.js"></script>
+  <script src="js/contact.js?v=2"></script>
   <script>
     (function () {
       const carousel = document.getElementById("hero-carousel");
