@@ -169,7 +169,7 @@ code {
   position: absolute;
   inset: 0;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 38% 62%;
   align-items: stretch;
   background: #000;
 }
@@ -188,8 +188,9 @@ code {
   justify-content: center;
   align-items: flex-start;
   text-align: left;
-  padding: var(--space-lg) clamp(1.25rem, 4vw, 2.5rem);
+  padding: var(--space-lg) clamp(2.5rem, 5vw, 3.5rem) var(--space-lg) clamp(0.25rem, 1vw, 0.75rem);
   padding-bottom: calc(var(--nav-height) + var(--space-lg));
+  box-sizing: border-box;
   background: linear-gradient(
     90deg,
     transparent 0%,
@@ -280,6 +281,10 @@ code {
   max-width: none;
   color: rgba(255, 255, 255, 0.95);
   text-shadow: 0 2px 14px rgba(0, 0, 0, 0.8);
+}
+
+.carousel__sub-line1 {
+  white-space: nowrap;
 }
 
 .carousel__overlay--terms {
@@ -1304,6 +1309,10 @@ code {
   .carousel__sub.carousel__sub--hero {
     font-size: clamp(1.1rem, 5vw, 1.65rem);
     max-width: 26em;
+  }
+
+  .carousel__sub-line1 {
+    white-space: normal;
   }
 
   .carousel__logo {
