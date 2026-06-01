@@ -308,21 +308,9 @@
             取材・コラボ・フィードバックなど、お気軽にどうぞ。
             送信後、自動返信メールをお送りします。
           </p>
-          <p class="contact-form__notice" role="status">※ テスト中です — 送信機能を調整しています。</p>
         </header>
 
-        <form
-          class="contact-form"
-          id="contact-form"
-          action="https://formsubmit.co/dojinworks.2525@gmail.com"
-          method="POST"
-          novalidate
-        >
-          <input type="hidden" name="_subject" value="[LOGIC ROLL] お問い合わせ">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_next" value="https://logic-roll.com/?sent=1#contact">
-          <input type="text" name="_honey" class="sr-only" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <form class="contact-form" id="contact-form" novalidate>
           <div class="form-row">
             <label class="form-label" for="contact-name">お名前 <span class="form-required">必須</span></label>
             <input
@@ -411,15 +399,7 @@
   </footer>
 
   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-  <script>
-    (function () {
-      const statusEl = document.getElementById("contact-status");
-      if (new URLSearchParams(location.search).get("sent") === "1" && statusEl) {
-        statusEl.textContent = "送信が完了しました。ありがとうございます。";
-        statusEl.className = "contact-form__status contact-form__status--success";
-      }
-    })();
-  </script>
+  <script src="js/contact.js"></script>
   <script>
     (function () {
       const carousel = document.getElementById("hero-carousel");
