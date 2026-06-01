@@ -1154,19 +1154,6 @@ code {
   border-radius: var(--radius-sm);
 }
 
-.contact-form__alt {
-  font-size: 0.85rem;
-  color: var(--color-text-muted);
-  text-align: center;
-  margin: 0 0 var(--space-md);
-  line-height: 1.6;
-}
-
-.contact-form__alt a {
-  color: var(--color-nav-active);
-  font-weight: 700;
-}
-
 .contact-form__submit:disabled,
 .contact-form__submit.is-loading {
   opacity: 0.7;
