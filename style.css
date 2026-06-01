@@ -215,16 +215,6 @@ code {
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
 }
 
-.carousel__sub--hero {
-  font-size: 10rem;
-  font-weight: 700;
-  line-height: 1.2;
-  margin: 0;
-  max-width: none;
-  color: rgba(255, 255, 255, 0.95);
-  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.8);
-}
-
 .carousel__overlay {
   position: absolute;
   inset: 0;
@@ -281,6 +271,15 @@ code {
   margin-top: 0.25rem;
   max-width: 420px;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.carousel__sub.carousel__sub--hero {
+  font-size: 10rem;
+  line-height: 1.2;
+  margin: 0;
+  max-width: none;
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.8);
 }
 
 .carousel__overlay--terms {
@@ -1302,7 +1301,7 @@ code {
     white-space: normal;
   }
 
-  .carousel__sub--hero {
+  .carousel__sub.carousel__sub--hero {
     font-size: clamp(1.1rem, 5vw, 1.65rem);
     max-width: 26em;
   }
