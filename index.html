@@ -321,6 +321,7 @@
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_next" value="https://logic-roll.com/?sent=1#contact">
+          <input type="text" name="_honey" class="sr-only" tabindex="-1" autocomplete="off" aria-hidden="true">
           <div class="form-row">
             <label class="form-label" for="contact-name">お名前 <span class="form-required">必須</span></label>
             <input
@@ -375,6 +376,11 @@
           </div>
 
           <p class="contact-form__status" id="contact-status" role="status" aria-live="polite"></p>
+          <p class="contact-form__alt">
+            フォームから送信できない場合は
+            <a href="mailto:dojinworks.2525@gmail.com?subject=%5BLOGIC%20ROLL%5D%20%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B">dojinworks.2525@gmail.com</a>
+            へ直接メールしてください。
+          </p>
 
           <button type="submit" class="contact-form__submit" id="contact-submit">
             <span class="contact-form__submit-text">送信する</span>
@@ -404,7 +410,15 @@
   </footer>
 
   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-  <script src="js/contact.js?v=2"></script>
+  <script>
+    (function () {
+      const statusEl = document.getElementById("contact-status");
+      if (new URLSearchParams(location.search).get("sent") === "1" && statusEl) {
+        statusEl.textContent = "送信が完了しました。ありがとうございます。";
+        statusEl.className = "contact-form__status contact-form__status--success";
+      }
+    })();
+  </script>
   <script>
     (function () {
       const carousel = document.getElementById("hero-carousel");
