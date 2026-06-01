@@ -124,7 +124,7 @@ code {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background: #1a2838;
+  background: #000;
 }
 
 .carousel__track {
@@ -150,47 +150,37 @@ code {
 .carousel__visual {
   position: absolute;
   inset: 0;
-  background-size: cover;
-  background-position: center;
+  background-color: #000;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  image-rendering: auto;
 }
 
 .carousel__visual--head1 {
-  background-color: #1a2838;
   background-image: url("images/head_1.png");
 }
 
 .carousel__visual--head2 {
-  background-color: #e8dcc8;
   background-image: url("images/head_2.png");
 }
 
 .carousel__visual--mage {
-  background-color: #050608;
   background-image: url("images/hero-mage.png");
-  background-size: contain;
-  background-repeat: no-repeat;
   background-position: center bottom;
 }
 
-.carousel__visual--head1::after,
-.carousel__visual--head2::after {
-  background: linear-gradient(
-    90deg,
-    rgba(20, 30, 45, 0.2) 0%,
-    transparent 40%
-  );
-}
-
-.carousel__visual::after {
+.carousel__visual--mage::after {
   content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(
     90deg,
-    rgba(20, 30, 45, 0.55) 0%,
-    rgba(20, 30, 45, 0.15) 45%,
-    transparent 70%
+    rgba(0, 0, 0, 0.45) 0%,
+    rgba(0, 0, 0, 0.12) 40%,
+    transparent 65%
   );
+  pointer-events: none;
 }
 
 .carousel__overlay {
