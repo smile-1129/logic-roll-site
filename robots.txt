@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://smile-1129.github.io/logic-roll-site/sitemap.xml
+Sitemap: https://logic-roll.com/sitemap.xml

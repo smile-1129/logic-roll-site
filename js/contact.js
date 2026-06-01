@@ -6,10 +6,14 @@
 
   const API_URL = "api/contact.php";
   const FORMSUBMIT_EMAIL = "dojinworks.2525@gmail.com";
-  const STATIC_HOST_PATTERN = /(^|\.)github\.io$/i;
+  const STATIC_HOST_PATTERN = /(^|\.)github\.io$|(^|\.)vercel\.app$/i;
+  const PRODUCTION_HOSTS = ["logic-roll.com", "www.logic-roll.com"];
 
   function useStaticSubmit() {
-    return STATIC_HOST_PATTERN.test(location.hostname) || location.protocol === "file:";
+    const host = location.hostname;
+    if (STATIC_HOST_PATTERN.test(host)) return true;
+    if (PRODUCTION_HOSTS.includes(host)) return true;
+    return location.protocol === "file:";
   }
 
   function setStatus(message, type) {
