@@ -4,7 +4,7 @@
   const submitBtn = document.getElementById("contact-submit");
   if (!form || !statusEl || !submitBtn) return;
 
-  const API_URL = "/api/contact";
+  const WEB3FORMS_ACCESS_KEY = "6e19cea6-d011-4ec1-9c58-98d1804df110";
 
   function setStatus(message, type) {
     statusEl.textContent = message;
@@ -19,10 +19,12 @@
 
   function getPayload() {
     return {
+      access_key: WEB3FORMS_ACCESS_KEY,
       name: form.elements.namedItem("name")?.value?.trim() ?? "",
       email: form.elements.namedItem("email")?.value?.trim() ?? "",
-      subject: form.elements.namedItem("subject")?.value?.trim() ?? "",
+      subject: `[LOGIC ROLL] ${form.elements.namedItem("subject")?.value?.trim() ?? ""}`,
       message: form.elements.namedItem("message")?.value?.trim() ?? "",
+      from_name: "LOGIC ROLL 公式サイト",
     };
   }
 
@@ -39,18 +41,18 @@
     setStatus("送信中です…", "pending");
 
     try {
-      const res = await fetch(API_URL, {
+      const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify(getPayload()),
       });
       const data = await res.json().catch(() => ({}));
 
-      if (!res.ok || !data.ok) {
-        throw new Error(data.error || "送信に失敗しました。");
+      if (!res.ok || !data.success) {
+        throw new Error(data.message || "送信に失敗しました。");
       }
 
-      setStatus(data.message || "送信が完了しました。ありがとうございます。", "success");
+      setStatus("送信が完了しました。内容を確認のうえ、ご返信いたします。", "success");
       form.reset();
     } catch (err) {
       setStatus(
