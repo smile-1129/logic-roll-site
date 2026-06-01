@@ -216,11 +216,11 @@ code {
 }
 
 .carousel__sub--hero {
-  font-size: clamp(1.25rem, 3.5vw, 2.35rem);
+  font-size: 10rem;
   font-weight: 700;
-  line-height: 1.55;
+  line-height: 1.2;
   margin: 0;
-  max-width: 26em;
+  max-width: none;
   color: rgba(255, 255, 255, 0.95);
   text-shadow: 0 2px 14px rgba(0, 0, 0, 0.8);
 }
@@ -1304,6 +1304,7 @@ code {
 
   .carousel__sub--hero {
     font-size: clamp(1.1rem, 5vw, 1.65rem);
+    max-width: 26em;
   }
 
   .carousel__logo {
