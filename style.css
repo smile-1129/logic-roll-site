@@ -546,6 +546,10 @@ code {
   z-index: 1;
 }
 
+.main-content--subpage {
+  padding-top: calc(var(--nav-height) + var(--space-md));
+}
+
 .page-section {
   padding: var(--space-2xl) clamp(1rem, 4vw, 2rem);
   scroll-margin-top: calc(var(--nav-height) + 12px);
@@ -1159,6 +1163,18 @@ code {
   flex-direction: column;
   align-items: center;
   gap: var(--space-md);
+}
+
+.footer-contact-link {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-nav-active);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.footer-contact-link:hover {
+  color: var(--color-orange);
 }
 
 .footer-copy {

@@ -5,6 +5,12 @@
   if (!form || !statusEl || !submitBtn) return;
 
   const API_URL = "api/contact.php";
+  const FORMSUBMIT_EMAIL = "dojinworks.2525@gmail.com";
+  const STATIC_HOST_PATTERN = /(^|\.)github\.io$/i;
+
+  function useStaticSubmit() {
+    return STATIC_HOST_PATTERN.test(location.hostname) || location.protocol === "file:";
+  }
 
   function setStatus(message, type) {
     statusEl.textContent = message;
@@ -15,6 +21,36 @@
   function setLoading(loading) {
     submitBtn.disabled = loading;
     submitBtn.classList.toggle("is-loading", loading);
+  }
+
+  async function submitViaPhp(formData) {
+    const res = await fetch(API_URL, {
+      method: "POST",
+      body: formData,
+    });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok || !data.ok) {
+      throw new Error(data.error || data.message || "送信に失敗しました。");
+    }
+    return data.message || "送信が完了しました。確認メールをお送りしました。";
+  }
+
+  async function submitViaFormSubmit(formData) {
+    formData.append("_subject", `[LOGIC ROLL] ${formData.get("subject") || "お問い合わせ"}`);
+    formData.append("_template", "table");
+    formData.append("_captcha", "false");
+
+    const res = await fetch(`https://formsubmit.co/ajax/${FORMSUBMIT_EMAIL}`, {
+      method: "POST",
+      headers: { Accept: "application/json" },
+      body: formData,
+    });
+
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok) {
+      throw new Error(data.message || "送信に失敗しました。");
+    }
+    return "送信が完了しました。内容を確認のうえ、ご返信いたします。";
   }
 
   form.addEventListener("submit", async (e) => {
@@ -31,24 +67,17 @@
     setStatus("送信中です…", "pending");
 
     try {
-      const res = await fetch(API_URL, {
-        method: "POST",
-        body: formData,
-      });
+      const message = useStaticSubmit()
+        ? await submitViaFormSubmit(formData)
+        : await submitViaPhp(formData);
 
-      const data = await res.json().catch(() => ({}));
-
-      if (!res.ok || !data.ok) {
-        throw new Error(data.error || data.message || "送信に失敗しました。");
-      }
-
-      setStatus(data.message || "送信が完了しました。", "success");
+      setStatus(message, "success");
       form.reset();
     } catch (err) {
       const msg = err.message || "";
       if (msg.includes("Failed to fetch") || msg.includes("NetworkError")) {
         setStatus(
-          "送信できませんでした。PHP対応のサーバーにアップロードし、サイトURLからアクセスしてください。",
+          "送信できませんでした。しばらくしてから再度お試しください。",
           "error"
         );
       } else {
