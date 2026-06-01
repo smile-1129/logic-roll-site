@@ -200,13 +200,13 @@ code {
 
 .carousel__catch--hero {
   font-family: var(--font-display);
-  font-size: clamp(2.5rem, 8.5vw, 5rem);
+  font-size: clamp(3rem, 11vw, 7rem);
   font-weight: 700;
   letter-spacing: 0.04em;
-  line-height: 1.08;
+  line-height: 1.05;
   white-space: nowrap;
   margin: 0 0 var(--space-md);
-  padding: 0.42em 0.8em;
+  padding: 0.35em 0.65em;
   background: linear-gradient(135deg, var(--color-nav-active) 0%, #2a6eb8 55%, #1e3a5f 100%);
   border-radius: var(--radius-md);
   box-shadow:
@@ -216,11 +216,11 @@ code {
 }
 
 .carousel__sub--hero {
-  font-size: clamp(1.05rem, 2.35vw, 1.55rem);
+  font-size: clamp(1.25rem, 3.5vw, 2.35rem);
   font-weight: 700;
-  line-height: 1.65;
+  line-height: 1.55;
   margin: 0;
-  max-width: 24em;
+  max-width: 26em;
   color: rgba(255, 255, 255, 0.95);
   text-shadow: 0 2px 14px rgba(0, 0, 0, 0.8);
 }
@@ -1298,12 +1298,12 @@ code {
   }
 
   .carousel__catch--hero {
-    font-size: clamp(1.65rem, 7.5vw, 2.5rem);
+    font-size: clamp(2rem, 10vw, 3.25rem);
     white-space: normal;
   }
 
   .carousel__sub--hero {
-    font-size: clamp(0.95rem, 3.8vw, 1.2rem);
+    font-size: clamp(1.1rem, 5vw, 1.65rem);
   }
 
   .carousel__logo {
