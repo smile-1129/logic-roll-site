@@ -18,43 +18,16 @@
     <div class="carousel" id="hero-carousel">
       <div class="carousel__track">
         <div class="carousel__slide is-active" data-slide="0">
-          <div class="carousel__visual carousel__visual--sky" role="img" aria-label="青空と浮遊島のファンタジー世界"></div>
-          <div class="carousel__overlay">
-            <p class="carousel__catch">不確定な運を、完璧な采配でねじ伏せろ。</p>
-            <h1 class="carousel__logo">
-              <span class="carousel__logo-main">LOGIC</span>
-              <span class="carousel__logo-accent">ROLL</span>
-            </h1>
-            <p class="carousel__sub">最高に脳汁が出るローグライト・タワーディフェンス</p>
-          </div>
+          <div class="carousel__visual carousel__visual--head1" role="img" aria-label="LOGIC ROLL キービジュアル（キャラクター集合）"></div>
         </div>
         <div class="carousel__slide" data-slide="1">
-          <div class="carousel__visual carousel__visual--forest" role="img" aria-label="光が差し込むファンタジーの森"></div>
-          <div class="carousel__overlay carousel__overlay--terms">
-            <div class="term-pair">
-              <p class="term-pair__item">
-                <span class="term-pair__label term-pair__label--roll">ROLL</span>
-                <span class="term-pair__mean">＝ 運</span>
-                <span class="term-pair__desc">ダイス、ドロー、湧き——揺らぐ不確定</span>
-              </p>
-              <p class="term-pair__item">
-                <span class="term-pair__label term-pair__label--logic">LOGIC</span>
-                <span class="term-pair__mean">＝ オートバトル</span>
-                <span class="term-pair__desc">采配した仲間が、自動で動く論理</span>
-              </p>
-            </div>
-          </div>
+          <div class="carousel__visual carousel__visual--head2" role="img" aria-label="LOGIC ROLL キービジュアル（ロゴ）"></div>
         </div>
         <div class="carousel__slide" data-slide="2">
-          <div class="carousel__visual carousel__visual--ruins" role="img" aria-label="遺跡とちびキャラの冒険"></div>
+          <div class="carousel__visual carousel__visual--mage" role="img" aria-label="開発中キャラクターイラスト"></div>
           <div class="carousel__overlay">
-            <p class="carousel__catch">かわいい世界で、ガチの戦略を。</p>
-            <div class="event-badge" role="status">
-              <span class="event-badge__spark" aria-hidden="true">✦</span>
-              <span class="event-badge__label">NEXT EVENT</span>
-              <span class="event-badge__date">2026.06 TOKYO COMITIA</span>
-              <span class="event-badge__detail">アルファ版 初お披露目</span>
-            </div>
+            <p class="carousel__catch">現在、鋭意制作中！</p>
+            <p class="carousel__sub">ゲーム画面・キャラクター・バトルシーンなど、順次公開予定です。</p>
           </div>
         </div>
       </div>
@@ -89,6 +62,10 @@
         <a href="#system" class="nav-item" data-section="system">
           <span class="nav-item__en">SYSTEM</span>
           <span class="nav-item__ja">システム</span>
+        </a>
+        <a href="gallery.html" class="nav-item nav-item--external">
+          <span class="nav-item__en">GALLERY</span>
+          <span class="nav-item__ja">ギャラリー</span>
         </a>
         <a href="#contact" class="nav-item" data-section="contact">
           <span class="nav-item__en">CONTACT</span>
@@ -126,15 +103,17 @@
             </div>
             <div class="media-block__body">
               <div class="youtube-wrap">
-                <iframe
-                  src="https://www.youtube.com/embed/VIDEO_ID?rel=0"
-                  title="LOGIC ROLL 公式動画"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowfullscreen
-                  loading="lazy"
-                ></iframe>
+                <video
+                  class="embed-video"
+                  controls
+                  preload="metadata"
+                  playsinline
+                >
+                  <source src="videos/teaser.mp4" type="video/mp4">
+                  お使いのブラウザは動画再生に対応していません。
+                </video>
               </div>
-              <p class="media-block__note">※ 動画IDは <code>index.html</code> 内の YouTube URL を差し替えてください。</p>
+              <p class="media-block__note">画面は開発中のものです</p>
             </div>
           </div>
 
@@ -153,11 +132,11 @@
                   data-theme="light"
                   data-chrome="nofooter noheader transparent"
                   data-height="420"
-                  href="https://twitter.com/"
+                  href="https://twitter.com/logicroll_info"
                 >公式Xの投稿を読み込み中…</a>
               </div>
               <a
-                href="https://x.com/"
+                href="https://x.com/logicroll_info"
                 class="twitter-fallback-btn"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -351,7 +330,7 @@
     <div class="footer-inner">
       <p class="footer-copy">&copy; 2026 LOGIC ROLL Project</p>
       <a
-        href="https://x.com/"
+        href="https://x.com/logicroll_info"
         class="footer-x-btn"
         target="_blank"
         rel="noopener noreferrer"
@@ -433,6 +412,8 @@
 
       navItems.forEach((item) => {
         item.addEventListener("click", (e) => {
+          const href = item.getAttribute("href") ?? "";
+          if (!href.startsWith("#")) return;
           e.preventDefault();
           scrollToSection(item.dataset.section);
           if (mobileNav && !mobileNav.hidden) {
@@ -446,6 +427,8 @@
         mobileNav.innerHTML = desktopMenu.innerHTML;
         mobileNav.querySelectorAll(".nav-item").forEach((item) => {
           item.addEventListener("click", (e) => {
+            const href = item.getAttribute("href") ?? "";
+            if (!href.startsWith("#")) return;
             e.preventDefault();
             scrollToSection(item.dataset.section);
             mobileNav.hidden = true;
