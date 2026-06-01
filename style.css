@@ -169,9 +169,16 @@ code {
   position: absolute;
   inset: 0;
   display: grid;
-  grid-template-columns: minmax(260px, 46%) 1fr;
+  grid-template-columns: 1fr 1fr;
   align-items: stretch;
   background: #000;
+}
+
+.carousel__mage-art {
+  background: url("images/hero-mage.png") no-repeat left bottom;
+  background-size: contain;
+  min-height: 100%;
+  z-index: 1;
 }
 
 .carousel__hero-copy {
@@ -181,21 +188,14 @@ code {
   justify-content: center;
   align-items: flex-start;
   text-align: left;
-  padding: var(--space-lg) clamp(1.25rem, 4vw, 3rem);
+  padding: var(--space-lg) clamp(1.25rem, 4vw, 2.5rem);
   padding-bottom: calc(var(--nav-height) + var(--space-lg));
   background: linear-gradient(
     90deg,
-    rgba(0, 0, 0, 0.85) 0%,
-    rgba(0, 0, 0, 0.55) 75%,
-    transparent 100%
+    transparent 0%,
+    rgba(0, 0, 0, 0.45) 15%,
+    rgba(0, 0, 0, 0.65) 100%
   );
-}
-
-.carousel__mage-art {
-  background: url("images/hero-mage.png") no-repeat right bottom;
-  background-size: contain;
-  min-height: 100%;
-  z-index: 1;
 }
 
 .carousel__catch--hero {
@@ -1281,21 +1281,19 @@ code {
 
   .carousel__mage-layout {
     grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr;
-  }
-
-  .carousel__hero-copy {
-    order: 1;
-    padding: var(--space-md) 1.25rem 0.5rem;
-    padding-bottom: 0.5rem;
-    align-items: center;
-    text-align: center;
+    grid-template-rows: 1fr auto;
   }
 
   .carousel__mage-art {
-    order: 2;
     background-position: center bottom;
-    min-height: 55%;
+    min-height: 50vh;
+  }
+
+  .carousel__hero-copy {
+    padding: var(--space-md) 1.25rem;
+    padding-bottom: calc(var(--nav-height) + 1rem);
+    align-items: center;
+    text-align: center;
   }
 
   .carousel__catch--hero {
