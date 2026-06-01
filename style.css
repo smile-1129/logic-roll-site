@@ -1141,6 +1141,19 @@ code {
     0 14px 32px rgba(255, 107, 53, 0.45);
 }
 
+.contact-form__notice {
+  max-width: 640px;
+  margin: 0 auto var(--space-md);
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-orange);
+  text-align: center;
+  background: rgba(255, 140, 66, 0.12);
+  border: 2px solid rgba(255, 140, 66, 0.35);
+  border-radius: var(--radius-sm);
+}
+
 .contact-form__alt {
   font-size: 0.85rem;
   color: var(--color-text-muted);
