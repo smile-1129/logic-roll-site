@@ -858,15 +858,36 @@ code {
 }
 
 .twitter-wrap {
-  min-height: 420px;
+  min-height: 120px;
   border-radius: var(--radius-md);
   overflow: hidden;
   background: var(--color-white);
   border: 1px solid rgba(126, 200, 232, 0.35);
+  padding: var(--space-sm);
 }
 
 .twitter-wrap iframe {
   width: 100% !important;
+  max-width: 100%;
+}
+
+.x-latest-loading,
+.x-latest-empty {
+  margin: 0;
+  padding: var(--space-md);
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  text-align: center;
+  line-height: 1.7;
+}
+
+.x-latest-empty--sub {
+  padding-top: 0;
+  font-size: 0.8rem;
+}
+
+#x-latest-post .twitter-tweet {
+  margin: 0 auto !important;
 }
 
 .twitter-fallback-btn {

@@ -24,7 +24,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Noto+Sans+JP:wght@400;700;900&family=Ubuntu:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20260607f">
+  <link rel="stylesheet" href="style.css?v=20260607g">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -210,15 +210,8 @@
               <p class="media-block__sub">開発ログ・プレイのヒント — <a href="https://x.com/logicroll_info" target="_blank" rel="noopener noreferrer">公式X</a></p>
             </div>
             <div class="media-block__body">
-              <div class="twitter-wrap">
-                <a
-                  class="twitter-timeline"
-                  data-theme="light"
-                  data-chrome="nofooter noheader transparent"
-                  data-height="420"
-                  data-lang="ja"
-                  href="https://x.com/logicroll_info"
-                >@logicroll_info の投稿を読み込み中…</a>
+              <div class="twitter-wrap" id="x-latest-post" aria-live="polite">
+                <p class="x-latest-loading">最新の投稿を読み込み中…</p>
               </div>
               <a
                 href="https://x.com/logicroll_info"
@@ -410,6 +403,7 @@
   </footer>
 
   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <script src="js/x-latest.js" defer></script>
   <script src="js/contact.js"></script>
   <script>
     (function () {
@@ -522,22 +516,6 @@
       sections.forEach((sec) => observer.observe(sec));
     })();
 
-    (function loadXTimeline() {
-      const container = document.getElementById("x-timeline");
-      if (!container) return;
-
-      function renderWidgets() {
-        if (window.twttr && window.twttr.widgets) {
-          window.twttr.widgets.load(container);
-        }
-      }
-
-      if (window.twttr && window.twttr.ready) {
-        window.twttr.ready(renderWidgets);
-      } else {
-        window.addEventListener("load", renderWidgets);
-      }
-    })();
   </script>
 </body>
 </html>

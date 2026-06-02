@@ -1,0 +1,4 @@
+{
+  "tweetUrl": "",
+  "_comment": "最新投稿のURL（例: https://x.com/logicroll_info/status/123）を入れると自動取得より優先されます。空のままならアカウントから最新1件を探します。"
+}
