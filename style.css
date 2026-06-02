@@ -663,6 +663,7 @@ code {
   overflow: hidden;
   line-height: 0;
   box-shadow: var(--shadow-card);
+  background: var(--color-base);
 }
 
 .about-intro__visual img {
@@ -671,6 +672,7 @@ code {
   height: auto;
   display: block;
   margin: 0 auto;
+  mix-blend-mode: multiply;
 }
 
 .about-intro__body .section-header__title {
