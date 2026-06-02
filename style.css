@@ -1473,11 +1473,27 @@ code {
   }
 
   .title-screen {
-    display: none;
+    height: min(48vh, 360px);
+    min-height: 220px;
   }
 
   .global-nav {
-    margin-top: 0;
+    margin-top: calc(-1 * var(--nav-height));
+  }
+
+  .carousel__arrow,
+  .carousel__dots {
+    display: none;
+  }
+
+  .carousel__slide:not(:first-child) {
+    display: none;
+  }
+
+  .carousel__slide:first-child {
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
   }
 
   .about-intro__layout {

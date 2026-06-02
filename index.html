@@ -24,7 +24,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Noto+Sans+JP:wght@400;700;900&family=Ubuntu:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20260607l">
+  <link rel="stylesheet" href="style.css?v=20260607m">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -454,13 +454,22 @@
 
       const mobileMq = window.matchMedia("(max-width: 768px)");
 
-      function isCarouselVisible() {
+      function isDesktopCarousel() {
         return !mobileMq.matches;
+      }
+
+      function applyCarouselMode() {
+        clearInterval(timer);
+        if (mobileMq.matches) {
+          goTo(0);
+        } else {
+          startAutoplay();
+        }
       }
 
       function startAutoplay() {
         clearInterval(timer);
-        if (!isCarouselVisible()) return;
+        if (!isDesktopCarousel()) return;
         timer = setInterval(next, 5500);
       }
 
@@ -475,11 +484,8 @@
 
       carousel.addEventListener("mouseenter", () => clearInterval(timer));
       carousel.addEventListener("mouseleave", startAutoplay);
-      mobileMq.addEventListener("change", () => {
-        if (isCarouselVisible()) startAutoplay();
-        else clearInterval(timer);
-      });
-      startAutoplay();
+      mobileMq.addEventListener("change", applyCarouselMode);
+      applyCarouselMode();
 
       const navItems = document.querySelectorAll(".nav-item");
       const sections = document.querySelectorAll(".page-section");
