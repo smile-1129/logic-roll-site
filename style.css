@@ -1472,6 +1472,14 @@ code {
     --nav-height: 64px;
   }
 
+  .title-screen {
+    display: none;
+  }
+
+  .global-nav {
+    margin-top: 0;
+  }
+
   .about-intro__layout {
     grid-template-columns: 1fr;
     text-align: center;
