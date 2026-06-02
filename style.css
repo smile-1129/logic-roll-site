@@ -169,14 +169,14 @@ code {
   position: absolute;
   inset: 0;
   display: grid;
-  grid-template-columns: 38% 62%;
+  grid-template-columns: 50% 50%;
   align-items: stretch;
   background: #000;
 }
 
 .carousel__mage-art {
   background: url("images/hero-mage.png") no-repeat left bottom;
-  background-size: contain;
+  background-size: auto 115%;
   min-height: 100%;
   z-index: 1;
 }
@@ -1503,19 +1503,21 @@ code {
 
   .carousel__mage-layout {
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr auto;
+    grid-template-rows: 1fr;
   }
 
   .carousel__mage-art {
-    background-position: center bottom;
-    min-height: 50vh;
+    display: none;
   }
 
   .carousel__hero-copy {
+    grid-column: 1;
+    grid-row: 1;
     padding: var(--space-md) 1.25rem;
     padding-bottom: calc(var(--nav-height) + 1rem);
     align-items: center;
     text-align: center;
+    background: #000;
   }
 
   .carousel__catch--hero {
