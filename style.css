@@ -969,6 +969,77 @@ code {
 }
 
 /* ==========================================================================
+   SYSTEM — ゲーム情報
+   ========================================================================== */
+.game-info {
+  margin-bottom: var(--space-xl);
+  background: var(--color-cream);
+  border-radius: var(--radius-lg);
+  border: 2px solid rgba(255, 255, 255, 0.95);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-md) var(--space-lg);
+}
+
+.game-info__title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--color-text);
+  margin: 0 0 var(--space-md);
+  padding-bottom: var(--space-sm);
+  border-bottom: 2px solid var(--color-sky-mid);
+}
+
+.game-info__list {
+  margin: 0;
+  padding: 0;
+}
+
+.game-info__row {
+  display: grid;
+  grid-template-columns: minmax(7.5rem, 9.5rem) 1fr;
+  gap: 0.5rem 1.25rem;
+  padding: 0.7rem 0;
+  align-items: baseline;
+}
+
+.game-info__row + .game-info__row {
+  border-top: 1px solid rgba(126, 200, 232, 0.35);
+}
+
+.game-info__term {
+  margin: 0;
+  font-size: 0.88rem;
+  font-weight: 900;
+  color: var(--color-nav-active);
+  letter-spacing: 0.04em;
+}
+
+.game-info__desc {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.55;
+}
+
+.game-info__note {
+  margin: var(--space-sm) 0 0;
+  padding-top: var(--space-sm);
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+@media (max-width: 480px) {
+  .game-info__row {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+}
+
+/* ==========================================================================
    SYSTEM — Strategy flow with illustrations
    ========================================================================== */
 #page-system {
