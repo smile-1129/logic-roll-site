@@ -134,6 +134,17 @@
     <!-- TOP：YouTube & X -->
     <section class="page-section page-section--top" id="top" data-panel="top">
       <div class="section-inner">
+        <section class="update-block" aria-labelledby="update-heading">
+          <h3 id="update-heading" class="update-block__title">更新情報</h3>
+          <ul class="update-list">
+            <li class="update-item">
+              <span class="update-item__badge">NEW</span>
+              <time class="update-item__date" datetime="2026-06-07">2026/06/07</time>
+              <span class="update-item__text">HPを公開</span>
+            </li>
+          </ul>
+        </section>
+
         <div class="about-intro">
           <span class="about-intro__eyebrow">TOP</span>
           <div class="about-intro__layout">
@@ -193,17 +204,6 @@
           <p class="platform-strip__note">Apple、Google Play、Steam は各社の商標です。</p>
           </div>
         </div>
-
-        <section class="update-block" aria-labelledby="update-heading">
-          <h3 id="update-heading" class="update-block__title">更新情報</h3>
-          <ul class="update-list">
-            <li class="update-item">
-              <span class="update-item__badge">NEW</span>
-              <time class="update-item__date" datetime="2026-06-07">2026/06/07</time>
-              <span class="update-item__text">HPを公開</span>
-            </li>
-          </ul>
-        </section>
 
         <div class="top-grid">
           <div class="media-block media-block--youtube">
@@ -364,82 +364,6 @@
       </div>
     </section>
 
-    <!-- CONTACT -->
-    <section class="page-section page-section--contact" id="contact" data-panel="contact">
-      <div class="section-inner">
-        <header class="section-header">
-          <span class="section-header__eyebrow">CONTACT</span>
-          <h2 class="section-header__title">お問い合わせ</h2>
-          <p class="section-header__lead">
-いつも当サークルの活動をご覧いただきありがとうございます。
-作品へのご感想やお問い合わせ、その他ご用件がございましたら、どうぞお気軽にお寄せください。
-送信後、自動返信メールをお送りいたします。
-お返事にお時間をいただく場合がございますが、あらかじめご了承いただけますと幸いです。
-          </p>
-        </header>
-
-        <form class="contact-form" id="contact-form" novalidate>
-          <div class="form-row">
-            <label class="form-label" for="contact-name">お名前 <span class="form-required">必須</span></label>
-            <input
-              class="form-input"
-              type="text"
-              id="contact-name"
-              name="name"
-              required
-              maxlength="80"
-              placeholder="例：山田 太郎"
-              autocomplete="name"
-            >
-          </div>
-
-          <div class="form-row">
-            <label class="form-label" for="contact-email">メールアドレス <span class="form-required">必須</span></label>
-            <input
-              class="form-input"
-              type="email"
-              id="contact-email"
-              name="email"
-              required
-              maxlength="254"
-              placeholder="例：example@email.com"
-              autocomplete="email"
-            >
-          </div>
-
-          <div class="form-row">
-            <label class="form-label" for="contact-subject">件名 <span class="form-required">必須</span></label>
-            <input
-              class="form-input"
-              type="text"
-              id="contact-subject"
-              name="subject"
-              required
-              maxlength="120"
-            >
-          </div>
-
-          <div class="form-row">
-            <label class="form-label" for="contact-message">お問い合わせ内容 <span class="form-required">必須</span></label>
-            <textarea
-              class="form-input form-textarea"
-              id="contact-message"
-              name="message"
-              required
-              maxlength="3000"
-              rows="7"
-              placeholder="お問い合わせ内容をご記入ください"
-            ></textarea>
-          </div>
-
-          <p class="contact-form__status" id="contact-status" role="status" aria-live="polite"></p>
-
-          <button type="submit" class="contact-form__submit" id="contact-submit">
-            <span class="contact-form__submit-text">送信する</span>
-          </button>
-        </form>
-      </div>
-    </section>
   </main>
 
   <footer class="site-footer">
@@ -462,7 +386,6 @@
   </footer>
 
   <script src="js/reveal.js" defer></script>
-  <script src="js/contact.js"></script>
   <script>
     (function () {
       const carousel = document.getElementById("hero-carousel");
