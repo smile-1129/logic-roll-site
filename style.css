@@ -873,14 +873,6 @@ code {
   transform: translateY(-2px);
 }
 
-.x-profile-card__meta {
-  margin: 0;
-  padding: 0.65rem 1rem 0;
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: #0f1419;
-}
-
 .x-profile-card__banner {
   aspect-ratio: 3 / 1;
   background: #cfd9de;
@@ -935,7 +927,7 @@ code {
 }
 
 .x-profile-card__body {
-  padding: 0.75rem 1rem 1.1rem;
+  padding: 0.5rem 1rem 0.9rem;
 }
 
 .x-profile-card__name {
@@ -947,7 +939,7 @@ code {
 }
 
 .x-profile-card__handle {
-  margin: 0 0 0.75rem;
+  margin: 0 0 0.4rem;
   font-size: 0.9rem;
   color: #536471;
 }
@@ -955,9 +947,8 @@ code {
 .x-profile-card__bio {
   margin: 0;
   font-size: 0.9rem;
-  line-height: 1.55;
+  line-height: 1.45;
   color: #0f1419;
-  white-space: pre-line;
 }
 
 .twitter-fallback-btn {
