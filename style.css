@@ -996,73 +996,104 @@ code {
 }
 
 /* ==========================================================================
-   SYSTEM — ゲーム情報
+   TOP — ストアバッジ
    ========================================================================== */
-.game-info {
+.platform-strip {
   margin-bottom: var(--space-xl);
-  background: var(--color-cream);
+  padding: var(--space-lg) var(--space-md);
   border-radius: var(--radius-lg);
-  border: 2px solid rgba(255, 255, 255, 0.95);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.06) 25%, transparent 25%) 0 0 / 24px 24px,
+    linear-gradient(225deg, rgba(255, 255, 255, 0.05) 25%, transparent 25%) 0 0 / 24px 24px,
+    linear-gradient(155deg, #5c3d8f 0%, #3d2868 45%, #2a1b4a 100%);
   box-shadow: var(--shadow-card);
-  padding: var(--space-md) var(--space-lg);
 }
 
-.game-info__title {
+.platform-strip__badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 0.75rem;
+}
+
+.store-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  min-width: min(100%, 200px);
+  flex: 1 1 180px;
+  max-width: 220px;
+  min-height: 58px;
+  padding: 0.55rem 1rem;
+  background: #0a0a0a;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 10px;
+  color: #fff;
+  text-decoration: none;
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.store-badge:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.55);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+}
+
+.store-badge__icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.store-badge__icon--steam {
+  color: #c7d5e0;
+}
+
+.store-badge__text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+  min-width: 0;
+}
+
+.store-badge__brand {
   font-family: var(--font-display);
-  font-size: 1rem;
+  font-size: 1.15rem;
   font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.store-badge__sub {
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.78);
+  margin-top: 0.15rem;
+}
+
+.store-badge--steam .store-badge__brand {
+  font-size: 1.35rem;
   letter-spacing: 0.12em;
-  color: var(--color-text);
-  margin: 0 0 var(--space-md);
-  padding-bottom: var(--space-sm);
-  border-bottom: 2px solid var(--color-sky-mid);
 }
 
-.game-info__list {
-  margin: 0;
-  padding: 0;
-}
-
-.game-info__row {
-  display: grid;
-  grid-template-columns: minmax(7.5rem, 9.5rem) 1fr;
-  gap: 0.5rem 1.25rem;
-  padding: 0.7rem 0;
-  align-items: baseline;
-}
-
-.game-info__row + .game-info__row {
-  border-top: 1px solid rgba(126, 200, 232, 0.35);
-}
-
-.game-info__term {
-  margin: 0;
-  font-size: 0.88rem;
-  font-weight: 900;
-  color: var(--color-nav-active);
-  letter-spacing: 0.04em;
-}
-
-.game-info__desc {
-  margin: 0;
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: var(--color-text);
-  line-height: 1.55;
-}
-
-.game-info__note {
-  margin: var(--space-sm) 0 0;
-  padding-top: var(--space-sm);
-  font-size: 0.8rem;
-  color: var(--color-text-muted);
+.platform-strip__note {
+  margin: var(--space-md) 0 0;
+  font-size: 0.68rem;
   line-height: 1.6;
+  color: rgba(255, 255, 255, 0.72);
+  text-align: center;
 }
 
-@media (max-width: 480px) {
-  .game-info__row {
-    grid-template-columns: 1fr;
-    gap: 0.25rem;
+@media (max-width: 640px) {
+  .platform-strip__badges {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .store-badge {
+    max-width: 280px;
+    width: 100%;
   }
 }
 

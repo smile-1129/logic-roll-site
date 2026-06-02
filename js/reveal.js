@@ -7,7 +7,7 @@
     { selector: "main .update-block", delay: 0.08 },
     { selector: "main .top-grid .media-block", stagger: 0.12 },
     { selector: "main .page-section .section-header" },
-    { selector: "main .game-info", delay: 0.08 },
+    { selector: "main .platform-strip", delay: 0.08 },
     { selector: "main .system-step", stagger: 0.14 },
     { selector: "main .contact-form", delay: 0.1 },
     { selector: "main .gallery-grid .gallery-item", stagger: 0.05, maxStagger: 8 },
