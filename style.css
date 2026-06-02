@@ -651,6 +651,28 @@ code {
   margin-bottom: var(--space-md);
 }
 
+.about-intro__layout {
+  display: grid;
+  grid-template-columns: 1fr minmax(160px, 36%);
+  gap: clamp(1rem, 4vw, 2rem);
+  align-items: center;
+}
+
+.about-intro__visual {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  line-height: 0;
+  box-shadow: var(--shadow-card);
+}
+
+.about-intro__visual img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
 .about-intro__body .section-header__title {
   margin-top: 0;
 }
@@ -1544,6 +1566,15 @@ code {
     opacity: 1;
     visibility: visible;
     z-index: 1;
+  }
+
+  .about-intro__layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .about-intro__visual img {
+    max-width: 240px;
   }
 
   .about-intro__body .section-header__title,
