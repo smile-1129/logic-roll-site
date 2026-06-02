@@ -653,7 +653,8 @@ code {
   border-radius: var(--radius-lg);
   border: 2px solid rgba(255, 255, 255, 0.95);
   box-shadow: var(--shadow-card);
-  padding: var(--space-md) var(--space-lg);
+  padding: var(--space-md) var(--space-lg) 0;
+  overflow: hidden;
 }
 
 .about-intro__eyebrow {
@@ -998,15 +999,17 @@ code {
 /* ==========================================================================
    TOP — ストアバッジ
    ========================================================================== */
-.platform-strip {
-  margin-bottom: var(--space-xl);
-  padding: var(--space-lg) var(--space-md);
-  border-radius: var(--radius-lg);
-  background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.06) 25%, transparent 25%) 0 0 / 24px 24px,
-    linear-gradient(225deg, rgba(255, 255, 255, 0.05) 25%, transparent 25%) 0 0 / 24px 24px,
-    linear-gradient(155deg, #5c3d8f 0%, #3d2868 45%, #2a1b4a 100%);
-  box-shadow: var(--shadow-card);
+.about-intro .platform-strip {
+  margin: var(--space-md) calc(-1 * var(--space-lg)) 0;
+  padding: var(--space-md) var(--space-lg);
+  border-top: 2px solid var(--color-sky-mid);
+  border-radius: 0;
+  background: linear-gradient(
+    180deg,
+    var(--color-sky-light) 0%,
+    rgba(184, 223, 245, 0.45) 100%
+  );
+  box-shadow: none;
 }
 
 .platform-strip__badges {
@@ -1018,6 +1021,7 @@ code {
 }
 
 .store-badge {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 0.65rem;
@@ -1026,18 +1030,29 @@ code {
   max-width: 220px;
   min-height: 58px;
   padding: 0.55rem 1rem;
-  background: #0a0a0a;
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  border-radius: 10px;
-  color: #fff;
-  text-decoration: none;
-  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  overflow: hidden;
+  background: linear-gradient(145deg, #3d5266 0%, var(--color-text) 100%);
+  border: 2px solid rgba(126, 200, 232, 0.55);
+  border-radius: var(--radius-sm);
+  color: var(--color-white);
 }
 
-.store-badge:hover {
-  transform: translateY(-3px);
-  border-color: rgba(255, 255, 255, 0.55);
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+.store-badge__mask {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem 0.5rem;
+  background: rgba(45, 58, 74, 0.78);
+  backdrop-filter: blur(2px);
+  color: var(--color-white);
+  font-size: 0.62rem;
+  font-weight: 700;
+  line-height: 1.4;
+  text-align: center;
+  letter-spacing: 0.02em;
 }
 
 .store-badge__icon {
@@ -1081,7 +1096,7 @@ code {
   margin: var(--space-md) 0 0;
   font-size: 0.68rem;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.72);
+  color: var(--color-text-muted);
   text-align: center;
 }
 
