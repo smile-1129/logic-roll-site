@@ -24,7 +24,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Noto+Sans+JP:wght@400;700;900&family=Ubuntu:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20260607g">
+  <link rel="stylesheet" href="style.css?v=20260607h">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -210,15 +210,45 @@
               <p class="media-block__sub">開発ログ・プレイのヒント — <a href="https://x.com/logicroll_info" target="_blank" rel="noopener noreferrer">公式X</a></p>
             </div>
             <div class="media-block__body">
-              <div class="twitter-wrap" id="x-latest-post" aria-live="polite">
-                <p class="x-latest-loading">最新の投稿を読み込み中…</p>
-              </div>
               <a
+                class="x-profile-card"
                 href="https://x.com/logicroll_info"
-                class="twitter-fallback-btn"
                 target="_blank"
                 rel="noopener noreferrer"
-              >@logicroll_info をフォローする</a>
+                aria-label="公式X @logicroll_info のプロフィールを開く"
+              >
+                <p class="x-profile-card__meta">1件のポスト</p>
+                <div class="x-profile-card__banner">
+                  <img
+                    src="images/x-banner.jpg"
+                    alt=""
+                    width="598"
+                    height="199"
+                    loading="lazy"
+                    decoding="async"
+                  >
+                </div>
+                <div class="x-profile-card__actions">
+                  <img
+                    class="x-profile-card__avatar"
+                    src="images/x-avatar.jpg"
+                    alt=""
+                    width="80"
+                    height="80"
+                    loading="lazy"
+                    decoding="async"
+                  >
+                  <span class="x-profile-card__follow">フォローする</span>
+                </div>
+                <div class="x-profile-card__body">
+                  <p class="x-profile-card__name">【同人ゲーム】ロジックロール制作運営チーム</p>
+                  <p class="x-profile-card__handle">@logicroll_info</p>
+                  <p class="x-profile-card__bio">
+                    初めまして私たちは同人ゲームを制作しているチームです！<br>
+                    フォローしていただけますと幸いです！
+                  </p>
+                </div>
+              </a>
             </div>
           </div>
         </div>
@@ -402,8 +432,6 @@
     </div>
   </footer>
 
-  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-  <script src="js/x-latest.js" defer></script>
   <script src="js/contact.js"></script>
   <script>
     (function () {
