@@ -201,11 +201,10 @@ code {
 
 .carousel__catch--hero {
   font-family: var(--font-display);
-  font-size: 2rem;
   font-weight: 700;
   letter-spacing: 0.04em;
   line-height: 1.05;
-  white-space: nowrap;
+  white-space: normal;
   margin: 0 0 var(--space-md);
   padding: 0.35em 0.65em;
   background: linear-gradient(135deg, var(--color-nav-active) 0%, #2a6eb8 55%, #1e3a5f 100%);
@@ -236,6 +235,12 @@ code {
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
   margin-bottom: var(--space-sm);
   max-width: 420px;
+}
+
+.carousel__catch.carousel__catch--hero {
+  font-size: clamp(2.1rem, 5.2vw, 4.4rem);
+  white-space: nowrap;
+  max-width: 100%;
 }
 
 .carousel__logo {
@@ -1721,7 +1726,12 @@ code {
   }
 
   .carousel__catch--hero {
-    font-size: clamp(2rem, 10vw, 3.25rem);
+    font-size: clamp(2.4rem, 9.5vw, 4.25rem);
+    white-space: normal;
+  }
+
+  .carousel__catch.carousel__catch--hero {
+    font-size: clamp(2.4rem, 9.5vw, 4.25rem);
     white-space: normal;
   }
 
