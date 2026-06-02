@@ -1473,8 +1473,19 @@ code {
   }
 
   .title-screen {
-    height: min(48vh, 360px);
-    min-height: 220px;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 1024 / 472;
+  }
+
+  .carousel {
+    background: transparent;
+  }
+
+  .carousel__visual--head1 {
+    background-size: cover;
+    background-position: center center;
+    background-color: transparent;
   }
 
   .global-nav {
