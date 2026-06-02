@@ -648,6 +648,72 @@ code {
 }
 
 /* ==========================================================================
+   TOP — 更新情報
+   ========================================================================== */
+.update-block {
+  margin-bottom: var(--space-xl);
+  background: var(--color-cream);
+  border-radius: var(--radius-lg);
+  border: 2px solid rgba(255, 255, 255, 0.95);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-md) var(--space-lg);
+}
+
+.update-block__title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--color-text);
+  margin: 0 0 var(--space-md);
+  padding-bottom: var(--space-sm);
+  border-bottom: 2px solid var(--color-sky-mid);
+}
+
+.update-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.update-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem 1rem;
+  padding: 0.65rem 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.update-item + .update-item {
+  border-top: 1px solid rgba(126, 200, 232, 0.35);
+}
+
+.update-item__badge {
+  display: inline-block;
+  padding: 0.2em 0.65em;
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--color-white);
+  background: linear-gradient(135deg, var(--color-orange), #ff6b35);
+  border-radius: var(--radius-pill);
+}
+
+.update-item__date {
+  font-weight: 700;
+  color: var(--color-text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.update-item__text {
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+/* ==========================================================================
    TOP — YouTube & Twitter
    ========================================================================== */
 .top-grid {
