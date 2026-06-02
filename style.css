@@ -850,13 +850,6 @@ code {
   color: var(--color-nav-active);
 }
 
-.media-block--twitter .media-block__sub a {
-  color: var(--color-nav-active);
-  font-weight: 700;
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-
 .x-profile-card {
   display: block;
   text-decoration: none;
