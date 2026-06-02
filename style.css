@@ -1614,7 +1614,39 @@ code {
   }
 }
 
+/* ==========================================================================
+   Scroll reveal (main blocks — not global nav)
+   ========================================================================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition:
+    opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0s);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal--fade {
+  transform: none;
+}
+
+.reveal--fade.is-visible {
+  transform: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
   *,
   *::before,
   *::after {
