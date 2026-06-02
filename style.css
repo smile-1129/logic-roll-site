@@ -664,6 +664,8 @@ code {
   justify-content: center;
   background: var(--color-base);
   border-radius: var(--radius-lg);
+  padding: 0.5rem;
+  overflow: hidden;
 }
 
 .about-intro__visual img {
@@ -672,6 +674,7 @@ code {
   height: auto;
   display: block;
   object-fit: contain;
+  mix-blend-mode: multiply;
 }
 
 .about-intro__body .section-header__title {
