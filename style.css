@@ -662,7 +662,8 @@ code {
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  background: transparent;
+  background: var(--color-base);
+  border-radius: var(--radius-lg);
 }
 
 .about-intro__visual img {
@@ -671,7 +672,6 @@ code {
   height: auto;
   display: block;
   object-fit: contain;
-  background: transparent;
 }
 
 .about-intro__body .section-header__title {
