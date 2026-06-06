@@ -777,6 +777,16 @@ code {
   color: var(--color-text);
 }
 
+.update-item__link {
+  color: var(--color-nav-active);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.update-item__link:hover {
+  color: var(--color-orange);
+}
+
 /* ==========================================================================
    TOP — YouTube & Twitter
    ========================================================================== */
