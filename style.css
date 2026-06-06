@@ -168,34 +168,42 @@ code {
 .carousel__mage-layout {
   position: absolute;
   inset: 0;
-  display: grid;
-  grid-template-columns: 50% 50%;
-  align-items: stretch;
   background: #000;
+  overflow: hidden;
 }
 
 .carousel__mage-art {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: clamp(240px, 52%, 720px);
+  height: 100%;
   background: url("images/hero-mage.png") no-repeat left bottom;
-  background-size: auto 115%;
-  min-height: 100%;
+  background-size: auto min(115%, 100%);
   z-index: 1;
+  pointer-events: none;
 }
 
 .carousel__hero-copy {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
   z-index: 2;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   text-align: left;
-  padding: var(--space-lg) clamp(2.5rem, 5vw, 3.5rem) var(--space-lg) clamp(0.25rem, 1vw, 0.75rem);
+  width: clamp(260px, 48%, 560px);
+  padding: var(--space-lg) clamp(1rem, 3vw, 3rem);
   padding-bottom: calc(var(--nav-height) + var(--space-lg));
   box-sizing: border-box;
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(0, 0, 0, 0.45) 15%,
-    rgba(0, 0, 0, 0.65) 100%
+    rgba(0, 0, 0, 0.35) 18%,
+    rgba(0, 0, 0, 0.72) 100%
   );
 }
 
@@ -1648,6 +1656,32 @@ code {
   }
 }
 
+@media (max-width: 1100px) and (min-width: 769px) {
+  .carousel__mage-art {
+    width: clamp(200px, 46%, 520px);
+    background-size: auto min(105%, 100%);
+  }
+
+  .carousel__hero-copy {
+    width: clamp(220px, 54%, 460px);
+    align-items: center;
+    text-align: center;
+    padding-left: clamp(0.75rem, 2vw, 1.5rem);
+    padding-right: clamp(0.75rem, 2vw, 1.5rem);
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.15) 0%,
+      rgba(0, 0, 0, 0.55) 35%,
+      rgba(0, 0, 0, 0.8) 100%
+    );
+  }
+
+  .carousel__catch.carousel__catch--hero {
+    white-space: normal;
+    font-size: clamp(1.6rem, 4.2vw, 3rem);
+  }
+}
+
 @media (max-width: 768px) {
   :root {
     --title-height: 55vh;
@@ -1716,18 +1750,14 @@ code {
     padding-bottom: calc(var(--nav-height) + 2.5rem);
   }
 
-  .carousel__mage-layout {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-  }
-
   .carousel__mage-art {
     display: none;
   }
 
   .carousel__hero-copy {
-    grid-column: 1;
-    grid-row: 1;
+    left: 0;
+    right: 0;
+    width: 100%;
     padding: var(--space-md) 1.25rem;
     padding-bottom: calc(var(--nav-height) + 1rem);
     align-items: center;
