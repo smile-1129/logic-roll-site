@@ -130,26 +130,33 @@
       <div class="section-inner">
         <section class="update-block" aria-labelledby="update-heading">
           <h3 id="update-heading" class="update-block__title">更新情報</h3>
-          <ul class="update-list">
-            <li class="update-item">
-              <span class="update-item__badge">NEW</span>
-              <time class="update-item__date" datetime="2026-06-09">2026/06/09</time>
-              <span class="update-item__text"><a class="update-item__link" href="https://x.com/logicroll_info/status/2063852699549106435" target="_blank" rel="noopener noreferrer">コミケ出展</a></span>
-            </li>
-            <li class="update-item">
-              <time class="update-item__date" datetime="2026-06-08">2026/06/08</time>
-              <span class="update-item__text">HPを公開</span>
-            </li>
- 
-            <li class="update-item">
-              <time class="update-item__date" datetime="2026-06-07">2026/06/07</time>
-              <span class="update-item__text"><a class="update-item__link" href="https://x.com/logicroll_info/status/2063402976979628064" target="_blank" rel="noopener noreferrer">コミティア156にてチラシを配布中！</a></span>
-            </li>
-           <li class="update-item">
-              <time class="update-item__date" datetime="2026-06-07">2026/06/07</time>
-              <span class="update-item__text">HPを公開</span>
-            </li>
-          </ul>
+          <div class="update-list-panel" id="update-list-panel">
+            <ul class="update-list" id="update-list">
+              <li class="update-item">
+                <span class="update-item__badge">NEW</span>
+                <time class="update-item__date" datetime="2026-06-09">2026/06/09</time>
+                <span class="update-item__text"><a class="update-item__link" href="https://x.com/logicroll_info/status/2063852699549106435" target="_blank" rel="noopener noreferrer">コミケ出展</a></span>
+              </li>
+              <li class="update-item">
+                <time class="update-item__date" datetime="2026-06-07">2026/06/07</time>
+                <span class="update-item__text"><a class="update-item__link" href="https://x.com/logicroll_info/status/2063402976979628064" target="_blank" rel="noopener noreferrer">コミティア156にてチラシを配布中！</a></span>
+              </li>
+              <li class="update-item">
+                <time class="update-item__date" datetime="2026-06-07">2026/06/07</time>
+                <span class="update-item__text">HPを公開</span>
+              </li>
+            </ul>
+          </div>
+          <div class="update-block__actions">
+            <button
+              type="button"
+              class="update-block__more"
+              id="update-more-btn"
+              hidden
+              aria-expanded="false"
+              aria-controls="update-list-panel"
+            >more</button>
+          </div>
         </section>
 
         <div class="about-intro">
@@ -399,6 +406,7 @@
   </a>
 
   <script src="js/reveal.js" defer></script>
+  <script src="js/updates.js" defer></script>
   <script>
     (function () {
       const carousel = document.getElementById("hero-carousel");
